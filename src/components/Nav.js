@@ -1,6 +1,9 @@
 import piggy from "../porco.png";
 import React from "react";
 
+// function handleClick(e) {
+//   console.log(e.target.id);
+// }
 
 const Nav = props => {
   return (
@@ -11,15 +14,29 @@ const Nav = props => {
       </div>
       <span className="normalText">A React App for County Fair Hog Fans</span>
       <div className="hogTile">
-        {props.porkers.map(pork => (
-          <div className="pork">
-            <p key={pork.name}>{pork.name}</p>
-            <img src={require(`../hog-imgs/${pork.name.toLowerCase()}.jpg`)} />
-          </div>
-        ))}
-      </div>
+
+        {props.porkers.map(pork => {
+          return (
+            <div
+              onClick={props.handleClick}
+              clicked={props.clicked}
+              id={pork.name}
+              key={pork.name}
+              >
+              <img
+                src={require(`../hog-imgs/${pork.name.toLowerCase()}.jpg`)}
+                />
+              <p>{pork.name}</p>
+              <br />
+            </div>
+          );
+        }
+      )
+      
+    }
     </div>
-  );
+  </div>
+);
 };
 
 export default Nav;
