@@ -7,9 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {porkers.map(pork => {
-          <Nav img={require(`../hog-imgs/mudblood.jpg`)} pork={pork} />;
-        })}
+        <Nav porkers={porkers} />
       </div>
     );
   }
