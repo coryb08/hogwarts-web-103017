@@ -4,13 +4,12 @@ import Nav from "./Nav";
 import porkers from "../porkers_data";
 
 class App extends Component {
-  constructor() {
-    super();
-  }
   render() {
     return (
       <div className="App">
-        <Nav porkers={porkers} />
+        {porkers.map(pork => {
+          <Nav img={require(`../hog-imgs/mudblood.jpg`)} pork={pork} />;
+        })}
       </div>
     );
   }

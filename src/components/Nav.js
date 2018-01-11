@@ -4,13 +4,6 @@ import React from "react";
 // const jpgs = require.context("../src/hog-imgs", true, /\.jpg$/);
 
 const Nav = props => {
-  // function renderPics(props) {
-  //   props.forEach(porker => {
-  //     if (props.name
-  //   });
-  // }
-  // let thing = "../hog-imgs/cherub.jpg"
-
   return (
     <div className="navWrapper">
       <span className="headerText">Hogwarts</span>
@@ -18,17 +11,17 @@ const Nav = props => {
         <img src={piggy} className="App-logo" alt="piggy" />
       </div>
       <span className="normalText">A React App for County Fair Hog Fans</span>
+      <div className="hogTile">
+        <div className="pork">
+          <p key={props.pork.name}>{props.pork.name}</p>
+          <img src={props.img} />
+        </div>
+      </div>
     </div>
   );
 };
 
 export default Nav;
 // {jpgs.map(jpg => console.log)}
-// <div className="hogTile">
-//   {props.porkers.map((pork, i) => (
-//     <div className="pork">
-//       <p key={i}>{pork.name}</p>
-//       <img alt="piggysmalls" />
-//     </div>
-//   ))}
-// </div>
+
+// <img src={require("../hog-imgs/mudblood.jpg")} />
